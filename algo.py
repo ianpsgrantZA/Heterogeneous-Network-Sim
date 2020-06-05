@@ -42,7 +42,6 @@ def reset():
     
 
 def main():
-
     ST = 0
     SB = 0
     SD = 0
@@ -62,7 +61,7 @@ def main():
     BLOCK_NEW_CALLS1.append(SB*100/ST)
     BLOCK_HANDOFF_CALLS1.append(SD*100/ST)
 
-
+    # DEBUG
     # print("SB: "+repr(SB))
     # print("SD: "+repr(SD))
     # print("ST: "+repr(ST))
@@ -89,6 +88,7 @@ def main():
     BLOCK_NEW_CALLS2.append(SB*100/ST)
     BLOCK_HANDOFF_CALLS2.append(SD*100/ST)
     
+    # DEBUG
     # print("SB: "+repr(SB))
     # print("SD: "+repr(SD))
     # print("ST: "+repr(ST))
@@ -121,7 +121,6 @@ if __name__ == "__main__":
             lm1= lm1+0.1
             ln2= ln2+0.1
             lm2= lm2+0.1
-
 
         plt.figure()
         plt.plot(LN,BLOCK_NEW_CALLS1,label='New Calls')
@@ -159,8 +158,6 @@ if __name__ == "__main__":
             fiveG_C+=1
             fiveG_T = round(fiveG_C*0.6)
 
-
-
         plt.figure()
         plt.plot(C,BLOCK_NEW_CALLS1,label='New Calls')
         plt.plot(C,BLOCK_HANDOFF_CALLS1,label='Handoff Calls')
@@ -186,16 +183,8 @@ if __name__ == "__main__":
         reset()
         lte_T = 0
         fiveG_T = 0
-        # lte_C = 20
-        # fiveG_C = 15
-        # b1 = 1
-        # b2 = 2
         T1 = []
         T2 = []
-        # ln1 = 10
-        # lm1 = 10
-        # ln2 = 10
-        # lm2 = 10
         t1 = 0
         t2 = 0
         for i in range(0,21):
@@ -206,7 +195,6 @@ if __name__ == "__main__":
             lte_T = round(t1)
             t2 = t2+0.05*fiveG_C
             fiveG_T = round(t2)
-
 
         plt.figure()
         plt.plot(T1,BLOCK_NEW_CALLS1,label='New Calls')
@@ -234,8 +222,6 @@ if __name__ == "__main__":
         b1 = 0
         b2 = 0
         B = []
-
-        
         for i in range(0,1000):
             main()
             B.append(b1)
@@ -278,7 +264,6 @@ if __name__ == "__main__":
             ln2= ln2-0.1
             lm2= lm2-0.1
 
-
         plt.figure()
         plt.plot(LN,BLOCK_NEW_CALLS1,label='New Calls')
         plt.plot(LN,BLOCK_HANDOFF_CALLS1,label='Handoff Calls')
@@ -300,6 +285,3 @@ if __name__ == "__main__":
         plt.title("Effect of Increasing Call Departure Rate on \nBlocking Probability for 5G network")
         plt.show()
         plt.savefig("images/10_fiveG.png")
-
-
-
