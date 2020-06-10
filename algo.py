@@ -1,3 +1,5 @@
+# By Ian Grant, GRNIAN004
+# run using 'python3 algo.py'
 import numpy as np
 import math 
 import matplotlib.pyplot as plt
